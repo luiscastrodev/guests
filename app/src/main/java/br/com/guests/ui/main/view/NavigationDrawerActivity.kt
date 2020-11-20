@@ -12,7 +12,11 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.lifecycle.ViewModelProvider
 import br.com.guests.R
+import br.com.guests.ui.main.model.GuestModel
+import br.com.guests.ui.main.viewmodel.AllGuestViewModel
+import br.com.guests.ui.main.viewmodel.GuestFormViewmodel
 
 class NavigationDrawerActivity : AppCompatActivity() {
 
@@ -26,7 +30,7 @@ class NavigationDrawerActivity : AppCompatActivity() {
 
         val fab: FloatingActionButton = findViewById(R.id.fab)
         fab.setOnClickListener { view ->
-            startActivity(Intent(applicationContext, GuestFormActivity::class.java))
+           startActivity(Intent(applicationContext, GuestFormActivity::class.java))
         }
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
