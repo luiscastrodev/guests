@@ -7,15 +7,20 @@ import androidx.lifecycle.MutableLiveData
 import br.com.guests.ui.main.model.GuestModel
 import br.com.guests.ui.main.service.GuestRepository
 
-    class AllGuestViewModel(application: Application) : AndroidViewModel(application) {
+class AllGuestViewModel(application: Application) : AndroidViewModel(application) {
 
-    private val mGuestRepository  = GuestRepository.getInstance(application.applicationContext)
+    private val mGuestRepository = GuestRepository.getInstance(application.applicationContext)
 
     private val mGuestList = MutableLiveData<List<GuestModel>>()
 
     val guestList: LiveData<List<GuestModel>> = mGuestList
 
-    fun load(){
+
+    fun load() {
         mGuestList.value = mGuestRepository.getAll()
+    }
+
+    fun delete(id: Int) {
+        mGuestRepository.delete(id)
     }
 }
