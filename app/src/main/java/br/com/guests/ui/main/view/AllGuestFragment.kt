@@ -14,11 +14,11 @@ import br.com.guests.R
 import br.com.guests.ui.main.service.constants.GuestConstants
 import br.com.guests.ui.main.view.adapter.GuestAdapter
 import br.com.guests.ui.main.view.listener.GuestListener
-import br.com.guests.ui.main.viewmodel.AllGuestViewModel
+import br.com.guests.ui.main.viewmodel.GuestViewModel
 
 class AllGuestFragment : Fragment(), GuestListener {
 
-    private lateinit var mViewModel: AllGuestViewModel
+    private lateinit var mViewModel: GuestViewModel
     private val mAdapter: GuestAdapter = GuestAdapter()
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -27,7 +27,7 @@ class AllGuestFragment : Fragment(), GuestListener {
     ): View? {
 
         mViewModel =
-            ViewModelProvider(this).get(AllGuestViewModel::class.java)
+            ViewModelProvider(this).get(GuestViewModel::class.java)
 
         val root = inflater.inflate(R.layout.fragment_all_guests, container, false)
 
@@ -46,7 +46,7 @@ class AllGuestFragment : Fragment(), GuestListener {
     override fun onResume() {
         super.onResume()
 
-        mViewModel.load()
+        mViewModel.load(GuestConstants.FILTER.EMPTY)
     }
 
     private fun observer() {
@@ -66,7 +66,7 @@ class AllGuestFragment : Fragment(), GuestListener {
 
     override fun onDelete(id: Int) {
         mViewModel.delete(id)
-        mViewModel.load()
+        mViewModel.load(GuestConstants.FILTER.EMPTY)
     }
 
 }

@@ -6,8 +6,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import br.com.guests.ui.main.model.GuestModel
 import br.com.guests.ui.main.service.GuestRepository
+import br.com.guests.ui.main.service.constants.GuestConstants
 
-class AllGuestViewModel(application: Application) : AndroidViewModel(application) {
+class GuestViewModel(application: Application) : AndroidViewModel(application) {
 
     private val mGuestRepository = GuestRepository.getInstance(application.applicationContext)
 
@@ -16,8 +17,20 @@ class AllGuestViewModel(application: Application) : AndroidViewModel(application
     val guestList: LiveData<List<GuestModel>> = mGuestList
 
 
-    fun load() {
-        mGuestList.value = mGuestRepository.getAll()
+    fun load(filter: Int) {
+
+        when (filter) {
+            GuestConstants.FILTER.EMPTY -> {
+                mGuestList.value = mGuestRepository.getAll()
+            }
+            GuestConstants.FILTER.ABSENT -> {
+                mGuestList.value = mGuestRepository.getAbsent()
+            }
+            GuestConstants.FILTER.PRESENT -> {
+                mGuestList.value = mGuestRepository.getPresent()
+            }
+        }
+
     }
 
     fun delete(id: Int) {
