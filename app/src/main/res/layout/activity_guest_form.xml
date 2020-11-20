@@ -45,12 +45,14 @@
         android:layout_height="wrap_content">
 
         <RadioButton
+            android:id="@+id/radio_presence"
             android:text="Present"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:ignore="HardcodedText" />
 
         <RadioButton
+            android:id="@+id/radio_absent"
             android:text="Absent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
