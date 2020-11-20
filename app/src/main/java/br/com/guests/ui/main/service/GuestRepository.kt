@@ -1,7 +1,9 @@
 package br.com.guests.ui.main.service
 
+import android.content.ContentValues
 import android.content.Context
 import br.com.guests.ui.main.model.GuestModel
+import br.com.guests.ui.main.service.constants.DataBaseConstants
 
 class GuestRepository private constructor(context: Context) {
 
@@ -36,7 +38,13 @@ class GuestRepository private constructor(context: Context) {
     }
 
     fun save(guestModel: GuestModel) {
-        mGuestDataBaseHelper.writableDatabase.execSQL("")
+        val db = mGuestDataBaseHelper.writableDatabase
+
+        val contentValues = ContentValues()
+        contentValues.put(DataBaseConstants.GUEST.COLUMNS.NAME, guestModel.name)
+        contentValues.put(DataBaseConstants.GUEST.COLUMNS.PRESENCE, guestModel.presence)
+
+        db.insert(DataBaseConstants.GUEST.TABLE_NAME, null, contentValues)
     }
 
     fun update(guestModel: GuestModel) {
