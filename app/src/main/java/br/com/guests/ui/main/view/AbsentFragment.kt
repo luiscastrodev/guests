@@ -5,14 +5,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.com.guests.R
-import br.com.guests.ui.main.service.constants.GuestConstants
+import br.com.guests.ui.main.repository.constants.GuestConstants
 import br.com.guests.ui.main.view.adapter.GuestAdapter
 import br.com.guests.ui.main.view.listener.GuestListener
 import br.com.guests.ui.main.viewmodel.GuestViewModel

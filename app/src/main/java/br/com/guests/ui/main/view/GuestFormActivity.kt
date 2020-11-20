@@ -7,7 +7,7 @@ import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import br.com.guests.R
-import br.com.guests.ui.main.service.constants.GuestConstants
+import br.com.guests.ui.main.repository.constants.GuestConstants
 import br.com.guests.ui.main.viewmodel.GuestFormViewmodel
 import kotlinx.android.synthetic.main.activity_guest_form.*
 

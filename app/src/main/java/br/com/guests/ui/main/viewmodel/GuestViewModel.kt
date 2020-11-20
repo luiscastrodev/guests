@@ -5,12 +5,12 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import br.com.guests.ui.main.model.GuestModel
-import br.com.guests.ui.main.service.GuestRepository
-import br.com.guests.ui.main.service.constants.GuestConstants
+import br.com.guests.ui.main.repository.GuestRepository
+import br.com.guests.ui.main.repository.constants.GuestConstants
 
 class GuestViewModel(application: Application) : AndroidViewModel(application) {
 
-    private val mGuestRepository = GuestRepository.getInstance(application.applicationContext)
+    private val mGuestRepository = GuestRepository(application.applicationContext)
 
     private val mGuestList = MutableLiveData<List<GuestModel>>()
 
@@ -34,6 +34,9 @@ class GuestViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     fun delete(id: Int) {
-        mGuestRepository.delete(id)
+        val guest = mGuestRepository.get(id)
+        if (guest != null) {
+            mGuestRepository.delete(guest)
+        }
     }
 }

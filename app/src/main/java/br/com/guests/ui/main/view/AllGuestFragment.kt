@@ -11,7 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.com.guests.R
-import br.com.guests.ui.main.service.constants.GuestConstants
+import br.com.guests.ui.main.repository.constants.GuestConstants
 import br.com.guests.ui.main.view.adapter.GuestAdapter
 import br.com.guests.ui.main.view.listener.GuestListener
 import br.com.guests.ui.main.viewmodel.GuestViewModel

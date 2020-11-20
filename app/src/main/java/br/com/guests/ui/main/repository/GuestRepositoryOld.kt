@@ -1,22 +1,18 @@
-package br.com.guests.ui.main.service
+package br.com.guests.ui.main.repository
 
-import android.content.ContentValues
 import android.content.Context
-import br.com.guests.ui.main.model.GuestModel
-import br.com.guests.ui.main.service.constants.DataBaseConstants
-import java.lang.Exception
 
-class GuestRepository private constructor(context: Context) {
+class GuestRepositoryOld private constructor(context: Context) {
 
-    private var mGuestDataBaseHelper: GuestDataBaseHelper = GuestDataBaseHelper(context)
-
+    private var mGuestDataBaseHelperOLD: GuestDataBaseHelperOLD = GuestDataBaseHelperOLD(context)
+/*
     companion object {
-        private lateinit var respository: GuestRepository
+        private lateinit var respository: GuestRepositoryOld
 
-        fun getInstance(context: Context): GuestRepository {
+        fun getInstance(context: Context): GuestRepositoryOld {
 
             if (!::respository.isInitialized) {
-                respository = GuestRepository(context)
+                respository = GuestRepositoryOld(context)
             }
 
             return respository
@@ -237,5 +233,5 @@ class GuestRepository private constructor(context: Context) {
         } catch (ex: Exception) {
             false
         }
-    }
+    }*/
 }

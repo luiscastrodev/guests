@@ -1,4 +1,4 @@
-package br.com.guests.ui.main.service.constants
+package br.com.guests.ui.main.repository.constants
 
 class DataBaseConstants private constructor() {
 

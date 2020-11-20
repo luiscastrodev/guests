@@ -1,11 +1,11 @@
-package br.com.guests.ui.main.service
+package br.com.guests.ui.main.repository
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import br.com.guests.ui.main.service.constants.DataBaseConstants
+import br.com.guests.ui.main.repository.constants.DataBaseConstants
 
-class GuestDataBaseHelper(context: Context) :
+class GuestDataBaseHelperOLD(context: Context) :
     SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
     override fun onCreate(db: SQLiteDatabase) {
